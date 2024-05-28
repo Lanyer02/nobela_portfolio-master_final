@@ -22,7 +22,8 @@ const NavBar = () => {
         { id: 2, link: 'about' },
         { id: 3, link: 'project' },
         { id: 4, link: 'technologies' },
-        { id: 5, link: 'contact' },
+        { id: 5, link: 'certificate' },
+        { id: 6, link: 'contact' },
     ];
 
     return (
@@ -31,6 +32,12 @@ const NavBar = () => {
                 {`
                     .link-text {
                         position: relative;
+                        transition: text-shadow 0.3s, color 0.3s;
+                    }
+
+                    .link-text:hover {
+                        color: #00c6ff;
+                        text-shadow: 0 0 10px rgba(0, 198, 255, 0.9), 0 0 20px rgba(0, 198, 255, 0.9), 0 0 30px rgba(0, 198, 255, 0.9);
                     }
 
                     .superscript {
@@ -39,10 +46,14 @@ const NavBar = () => {
                         right: 0;
                         font-size: 0.8em;
                     }
+
+                    .navbar {
+                        transition: background-color 0.5s, backdrop-filter 0.5s;
+                    }
                 `}
             </style>
 
-            <div className={`flex justify-between items-center w-full h-20 px-2 text-white ${scrollY > 0 ? 'bg-black bg-opacity-70 backdrop-blur-md' : 'bg-gray-930'} fixed z-[10000] transition-all duration-200`}>
+            <div className={`navbar flex justify-between items-center w-full h-20 px-2 text-white ${scrollY > 0 ? 'bg-black bg-opacity-70 backdrop-blur-md' : 'bg-gray-930'} fixed z-[10000] transition-all duration-200`}>
                 <h1 className='text-5xl ml-8 cursor-pointer hover:scale-105 duration-200 text-white'>
                     <span className='font-signature'>Lanyer</span><span className="sm:text-4xl font-normal text-cyan-400 ml-1">.dev</span>
                 </h1>
@@ -63,7 +74,7 @@ const NavBar = () => {
                     {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
                 </div>
 
-                <ul className={`flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-gray-900 to-cyan-900 text-white transition-transform duration-300 ease-in-out transform ${nav ? 'translate-y-0' : '-translate-y-full'}`} style={{ zIndex: 9999 }}>
+                <ul className={`glowing-text flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-gray-900 to-cyan-900 text-white transition-transform duration-300 ease-in-out transform ${nav ? 'translate-y-0' : '-translate-y-full'}`} style={{ zIndex: 9999 }}>
                     {links.map(({ id, link }) => (
                         <li
                             key={id}

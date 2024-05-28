@@ -5,18 +5,22 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import Certificate from "./components/Certificate"
+import Footer from "./components/Footer"
 import React from 'react';
 
 function App() {
   return (
    <div>
+    
     <NavBar/>
     <Home/>
     <About/>
     <Portfolio/>
     <Experience/>
+    <Certificate/>
     <Contact/>
-
+    <Footer/>
     <SocialLinks/>
    </div>
   );

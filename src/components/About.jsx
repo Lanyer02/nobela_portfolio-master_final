@@ -6,7 +6,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 const About = () => {
   return (
-    <div id='about' className="bg-gradient-to-b from-black via-cyan-900 to-black w-full md:h-screen text-white flex items-center justify-center pt-20">
+    <div id='about' className="bg-gradient-to-b from-black via-black to-black w-full md:h-screen text-white flex items-center justify-center pt-16">
       <style>
         {`
           .button {
@@ -15,7 +15,7 @@ const About = () => {
             justify-content: center;
             padding: 0.75rem 1.5rem;
             margin: 1rem 0;
-            border-radius: 0.5rem;
+            border-radius: 0.3rem;
             background: linear-gradient(45deg, #00c6ff, #0072ff);
             color: white;
             font-weight: bold;
@@ -55,7 +55,7 @@ const About = () => {
        </style>
       <div className='max-w-screen-xl p-4 mx-auto flex-col md:flex-row flex items-center justify-center'>
         <div className="md:w-1/2 flex items-center justify-center">
-          <div className="product-card w-[300px] rounded-md shadow-xl overflow-hidden relative cursor-pointer snap-start shrink-0 py-8 px-6 bg-cyan-500 flex flex-col items-center justify-center gap-3">
+          <div className="product-card w-[300px] shadow-xl overflow-hidden relative cursor-pointer snap-start shrink-0 py-8 px-6 bg-cyan-500 flex flex-col items-center justify-center gap-3">
             <div className="absolute -left-[40%] top-0">
               <div className="flex gap-1">
               </div>
@@ -89,7 +89,7 @@ const About = () => {
           </div>
         </div>
         <div className="md:w-1/2 flex items-center justify-center md:justify-start">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left cursor-pointer">
             <p className="text-4xl sm:text-5xl font-bold text-white">HELLO, I'M</p>
             <p className="text-4xl sm:text-5xl font-bold text-white mt-3">ODLANYER L. NOBELA</p>
             <h2 className="text-4xl sm:text-3xl font-bold text-white mt-3 glowing-text">
