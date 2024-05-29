@@ -27,7 +27,7 @@ const Certificate = () => {
   };
 
   return (
-    <div id='certificate' className="bg-gradient-to-b from-black via-black to-black w-full h-full text-white py-16">
+    <div id='certificate' className="bg-black w-full md:h-screen text-white py-20">
       <div className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-cyan-400">Certificates</p>
@@ -38,12 +38,12 @@ const Certificate = () => {
             {certificates.map((cert) => (
               <div 
                 key={cert.id} 
-                className="relative group cursor-pointer overflow-hidden duration-500 w-64 h-80 bg-zinc-800 text-gray-50 p-5" 
+                className="relative group cursor-pointer overflow-hidden duration-500 w-64 h-80 bg-gray-800 shadow-2xl text-gray-50 p-5" 
                 onClick={() => handleCertClick(cert)}
               >
                 <div className="">
                   <div className="group-hover:scale-110 w-full h-60 bg-blue-400 duration-500">
-                    <img src={cert.src} alt={cert.title} className="w-full h-auto" onDragStart={(e) => e.preventDefault()} />
+                    <img src={cert.src} alt={cert.title} className="w-full h-full object-contain onDragStart={(e) => e.preventDefault()} " />
                   </div>
                   <div className="absolute w-56 left-0 p-5 -bottom-16 duration-500 group-hover:-translate-y-12">
                     <div className="absolute -z-10 left-0 w-64 h-28 opacity-0 duration-500 group-hover:opacity-80 group-hover:bg-blue-500"></div>

@@ -16,7 +16,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div name="project" className="bg-gradient-to-b from-black via-black to-black w-full h-full text-white py-16">
+    <div name="project" className="bg-black w-full h-full text-white py-16">
       <div className="max-w-screen-xl p-4 mx-auto  flex-col md:flex-row  justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-cyan-400">
@@ -26,7 +26,7 @@ const Portfolio = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map(({ id, src, siteUrl, codeUrl, title, description }) => (
-            <div key={id} className="relative flex flex-col bg-zinc-800 bg-clip-border text-white shadow-md mt-6 transition-transform hover:scale-105">
+            <div key={id} className="relative flex flex-col bg-gray-800 shadow-2xl bg-clip-border text-white mt-6 transition-transform hover:scale-105">
               <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
                 <img src={src} alt="Project" className="absolute inset-0 w-full h-full object-cover rounded-xl" onDragStart={(e) => e.preventDefault()}/>
               </div>
@@ -38,12 +38,12 @@ const Portfolio = () => {
                   {description}
                 </p>
               </div>
-              <div className="p-6 pt-0 flex justify-between">
+              <div className="p-6 pt-0 flex justify-between gap-2">
                   <a
                     href={siteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center select-none rounded-sm bg-blue-500 py-3 px-10 text-center font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:bg-blue-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                    className="flex items-center select-none rounded-sm bg-blue-500 py-2 px-8 text-center font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:bg-blue-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                   >
                     <FaLink className="mr-1" /> Live Demo
                   </a>

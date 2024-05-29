@@ -55,15 +55,15 @@ const About = () => {
        </style>
       <div className='max-w-screen-xl p-4 mx-auto flex-col md:flex-row flex items-center justify-center'>
         <div className="md:w-1/2 flex items-center justify-center">
-          <div className="product-card w-[300px] shadow-xl overflow-hidden relative cursor-pointer snap-start shrink-0 py-8 px-6 bg-cyan-500 flex flex-col items-center justify-center gap-3">
+          <div className="product-card w-[300px] shadow-xl overflow-hidden relative cursor-pointer snap-start shrink-0 py-8 px-6 bg-gray-800 flex flex-col items-center justify-center gap-3">
             <div className="absolute -left-[40%] top-0">
               <div className="flex gap-1">
               </div>
             </div>
             <div className="absolute rounded-full bg-white left-1/2 top-[44%] h-[110%] w-[110%] -translate-x-1/2"></div>
             <div className="para uppercase text-center leading-none ">
-              <p className="text-cyan-500 font-semibold text-xs font-serif">_</p>
-              <p className="font-bold text-xl tracking-wider text-cyan-500">_</p>
+              <p className="text-gray-800 font-semibold text-xs font-serif">_</p>
+              <p className="font-bold text-xl tracking-wider text-gray-800">_</p>
             </div>
             <div className="w-[180px] aspect-square bg-gray-100 z-40 rounded-md">
               <img src={HeroImage} alt="Profile Image" className="w-full h-full object-cover rounded-md" />

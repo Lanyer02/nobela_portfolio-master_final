@@ -35,7 +35,7 @@ const Experience = () => {
   ];
 
   return (
-    <div name='technologies' className="bg-gradient-to-b from-black via-black to-black w-full md:h-screen text-white flex items-center justify-center pt-16">
+    <div name='technologies' className="bg-black w-full md:h-screen text-white flex items-center justify-center pt-16">
       <style>
         {`
           .tech-card {
@@ -90,7 +90,7 @@ const Experience = () => {
               className="group transform transition duration-300 ease-in-out overflow-hidden text-white tech-card"
               style={{ '--glow-color': glow }}
             >
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 transition-opacity duration-300 hover:opacity-0"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-gray-800 shadow-2xl transition-opacity duration-300"></div>
               <div className="relative z-10 flex flex-col justify-center items-center p-4">
                 <img src={src} alt={title} className='w-20 h-20 mb-4' onDragStart={(e) => e.preventDefault()}/>
                 <p className='mt-2 cursor-pointer'>{title}</p>
