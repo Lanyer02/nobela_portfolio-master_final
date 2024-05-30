@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Certificate from "./components/Certificate";
 import Footer from "./components/Footer";
 import ParticlesComponent from "./components/particles";
+import Journal from './components/Journal';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <About />
         <Portfolio />
         <Certificate />
+        <Journal />
         <Contact />
         <div style={{ position: "relative", zIndex: "1" }}>
           <Footer />

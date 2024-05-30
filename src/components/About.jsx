@@ -19,8 +19,7 @@ const About = () => {
       const imageAspectRatio = 16 / 10;
       const maxWidth = modalContentHeight * imageAspectRatio;
       setModalHeight(modalContentHeight);
-      
-      // Check if image exceeds viewport height when zoomed in
+
       setIsOverflowing(modalContentHeight < ResumeImage.height);
     };
 
@@ -36,7 +35,7 @@ const About = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setIsZoomed(false); // Reset zoom state when modal is closed
+    setIsZoomed(false);
   };
   const techs = [
     { id: 1, icon: <FaHtml5 size={55} />, glow: 'rgba(255, 0, 0, 0.7)' },
@@ -175,7 +174,7 @@ const About = () => {
               <p className="text-4xl sm:text-5xl font-bold text-white mt-3">ODLANYER L. NOBELA</p>
               <h2 className="text-4xl sm:text-3xl font-bold text-white mt-3 glowing-text">
                 <TypeAnimation
-                  sequence={['WEB DEVELOPER', 2000, 'WEB DESIGN', 2000, 'PROGRAMMER', 2000]}
+                  sequence={['DEVELOPER', 2000, 'DESIGNER', 2000, 'PROGRAMMER', 2000]}
                   speed={200}
                   repeat={Infinity}
                 />
@@ -213,6 +212,7 @@ const About = () => {
         ))}
       </div>
     </div>
+    <div className="h-16"></div>
   </div>
   {isModalOpen && (
         <div
