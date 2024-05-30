@@ -3,10 +3,25 @@ import { TypeAnimation } from 'react-type-animation';
 import HeroImage from '../assets/heroImage.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaAndroid, FaGitAlt } from 'react-icons/fa';
+import { SiTailwindcss, SiFlask, SiFigma, SiNextdotjs } from 'react-icons/si';
 
 const About = () => {
+  const techs = [
+    { id: 1, icon: <FaHtml5 size={55} />, glow: 'rgba(255, 0, 0, 0.7)' },
+    { id: 2, icon: <FaCss3Alt size={55} />, glow: 'rgba(0, 0, 255, 0.7)' },
+    { id: 3, icon: <FaJs size={55} />, glow: 'rgba(255, 255, 0, 0.7)' },
+    { id: 4, icon: <SiTailwindcss size={55} />, glow: 'rgba(0, 128, 255, 0.7)' },
+    { id: 5, icon: <FaReact size={55} />, glow: 'rgba(0, 0, 139, 0.7)' },
+    { id: 6, icon: <FaAndroid size={55} />, glow: 'rgba(0, 255, 0, 0.7)' },
+    { id: 7, icon: <SiFlask size={55} />, glow: 'rgba(217, 217, 217, 0.7)' },
+    { id: 8, icon: <SiFigma size={55} />, glow: 'rgba(255, 99, 71, 0.7)' },
+    { id: 9, icon: <SiNextdotjs size={55} />, glow: 'rgba(255, 255, 255, 0.7)' },
+    { id: 10, icon: <FaGitAlt size={55} />, glow: 'rgba(255, 165, 0, 0.7)' },
+  ];
+
   return (
-    <div id='about' className="bg-gradient-to-b from-black via-black to-black w-full md:h-screen text-white flex items-center justify-center pt-16">
+    <div id='about' className="bg-gradient-to-b from-black via-black to-black w-full text-white flex flex-col items-center justify-center pt-16">
       <style>
         {`
           .button {
@@ -41,89 +56,122 @@ const About = () => {
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 35px rgba(255, 255, 255, 0.3), 0 0 6px #00c6ff, 0 0 35px #00c6ff;
           }
 
-          @media (max-width: 768px) {
-            .button {
-              padding: 0.5rem 1rem;
-              font-size: 0.875rem;
-            }
-            
-            .hero-image {
-              margin-top: 10rem; 
-            }
+          .tech-card {
+            width: 90px;
+            height: 90px;
+            margin: 5px;
+            padding: 5px;
+            box-sizing: border-box; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }          
+
+          .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0.65;
+          }
+
+          .tech-card:hover::before {
+            opacity: 0;
+          }
+
+          .tech-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color), 0 0 40px var(--glow-color);
           }
         `}
-       </style>
-      <div className='max-w-screen-xl p-4 mx-auto flex-col md:flex-row flex items-center justify-center'>
-        <div className="md:w-1/2 flex items-center justify-center">
-          <div className="product-card w-[300px] shadow-xl overflow-hidden relative cursor-pointer snap-start shrink-0 py-8 px-6 bg-gray-800 flex flex-col items-center justify-center gap-3">
-            <div className="absolute -left-[40%] top-0">
-              <div className="flex gap-1">
+      </style>
+      <div className='max-w-screen-xl p-4 mx-auto flex flex-col items-center justify-center'>
+        <div className="w-full flex flex-col md:flex-row items-center justify-center mb-16">
+          <div className="md:w-1/2 flex items-center justify-center mb-8 md:mb-0">
+            <div className="product-card w-[300px] shadow-xl overflow-hidden relative cursor-pointer snap-start shrink-0 py-8 px-6 bg-gray-800 flex flex-col items-center justify-center gap-3">
+              <div className="absolute -left-[40%] top-0">
+                <div className="flex gap-1"></div>
               </div>
-            </div>
-            <div className="absolute rounded-full bg-white left-1/2 top-[44%] h-[110%] w-[110%] -translate-x-1/2"></div>
-            <div className="para uppercase text-center leading-none ">
-              <p className="text-gray-800 font-semibold text-xs font-serif">_</p>
-              <p className="font-bold text-xl tracking-wider text-gray-800">_</p>
-            </div>
-            <div className="w-[180px] aspect-square bg-gray-100 z-40 rounded-md">
-              <img src={HeroImage} alt="Profile Image" className="w-full h-full object-cover rounded-md" />
-            </div>
-            <div className="btm-_container z-40 flex flex-row justify-between items-end gap-10">
-              <div className="flex flex-col items-start gap-1">
-                <div className="inline-flex gap-3 items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-black" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12c0 5.04 3.66 9.18 8.5 9.9V15.5H6.93V12h3.57V9.32c0-3.54 2-5.51 5.34-5.51 1.54 0 3.2.28 3.2.28v3.53h-1.8c-1.77 0-2.34 1.1-2.34 2.24V12h3.97l-.63 3.5h-3.34V22.9C18.34 22.68 22 17.94 22 12c0-5.52-4.48-10-10-10z"/>
-                  </svg>
-                  <p className="font-semibold text-xs text-black">Odlanyer L. Nobela</p>
-                </div>
-                <div className="flex flex-row gap-2">
+              <div className="absolute rounded-full bg-white left-1/2 top-[44%] h-[110%] w-[110%] -translate-x-1/2"></div>
+              <div className="para uppercase text-center leading-none ">
+                <p className="text-gray-800 font-semibold text-xs font-serif">_</p>
+                <p className="font-bold text-xl tracking-wider text-gray-800">_</p>
+              </div>
+              <div className="w-[180px] aspect-square bg-gray-100 z-40 rounded-md">
+                <img src={HeroImage} alt="Profile Image" className="w-full h-full object-cover rounded-md" />
+              </div>
+              <div className="btm-_container z-40 flex flex-row justify-between items-end gap-10">
+                <div className="flex flex-col items-start gap-1">
                   <div className="inline-flex gap-3 items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-black" fill="currentColor">
-                      <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10c2.34 0 4.51-.81 6.21-2.17-1.45-.43-3.18-.99-4.21-1.45l-1.36-.48c-.72-.27-1.31-.97-1.31-1.75v-1.99c3.79-.25 6.85-3.35 6.85-7.15 0-1.63-.55-3.13-1.47-4.32C16.49 3.02 14.34 2 12 2zm-1 14.5l-3-2.25 6-4.5 3 2.25-6 4.5zm4-7.5H8v-1h7v1z"/>
-                    </svg>   
-                    <p className="font-semibold text-xs text-black">odlanyernobela152@gmail.com</p>
+                    </svg>
+                    <p className="font-semibold text-xs text-black">Odlanyer L. Nobela</p>
+                  </div>
+                  <div className="flex flex-row gap-2">
+                    <div className="inline-flex gap-3 items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-black" fill="currentColor">
+                        
+                      </svg>   
+                      <p className="font-semibold text-xs text-black">odlanyernobela152@gmail.com</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="md:w-1/2 flex items-center justify-center md:justify-start">
-          <div className="text-center md:text-left cursor-pointer">
-            <p className="text-4xl sm:text-5xl font-bold text-white">HELLO, I'M</p>
-            <p className="text-4xl sm:text-5xl font-bold text-white mt-3">ODLANYER L. NOBELA</p>
-            <h2 className="text-4xl sm:text-3xl font-bold text-white mt-3 glowing-text">
-              <TypeAnimation
-                sequence={['WEB DEVELOPER', 2000, 'WEB DESIGN', 2000, 'PROGRAMMER', 2000]}
-                speed={200}
-                repeat={Infinity}
-              />
-            </h2>
-            <p className='text-xl mb-6 mt-3 text-white'>
-              a passionate Developer/Designer dedicated to crafting 
-              engaging websites that blend functionality with creativity, aiming 
-              to elevate user experiences with every project.
-            </p>
-            <p className='text-xl text-white'>
-              In web development, I use ReactJS, JavaScript, HTML, and CSS,
-              alongside NoSQL databases like Firebase and SQL databases such as Xampp and Wamp.
-              With a knowledge on UI/UX design, I utilize Figma to blend functionality and aesthetics seamlessly.
-              I also develop mobile applications using Android Studio (Java) and enjoy staying updated with new technologies.
-            </p>
-
-            <div className="mt-4">
-              <ScrollLink
-                to="project"
-                smooth
-                duration={500}
-                className="button"
-              >
-                Projects
-                <span className="icon ml-1">
-                  <MdOutlineKeyboardArrowRight size={30} />
-                </span>
-              </ScrollLink>
+          <div className="md:w-1/2 flex items-center justify-center md:justify-start text-center md:text-left">
+            <div className="text-center md:text-left cursor-pointer">
+              <p className="text-4xl sm:text-5xl font-bold text-white">HELLO, I'M</p>
+              <p className="text-4xl sm:text-5xl font-bold text-white mt-3">ODLANYER L. NOBELA</p>
+              <h2 className="text-4xl sm:text-3xl font-bold text-white mt-3 glowing-text">
+                <TypeAnimation
+                  sequence={['WEB DEVELOPER', 2000, 'WEB DESIGN', 2000, 'PROGRAMMER', 2000]}
+                  speed={200}
+                  repeat={Infinity}
+                />
+              </h2>
+              <p className='text-xl mb-6 mt-3 text-white'>
+                a passionate Developer/Designer dedicated to crafting 
+                engaging websites that blend functionality with creativity, aiming 
+                to elevate user experiences with every project.
+              </p>
+              <div className="mt-4">
+                <ScrollLink
+                  to="project"
+                  smooth
+                  duration={500}
+                  className="button"
+                >
+                  Projects
+                  <span className="icon ml-1">
+                    <MdOutlineKeyboardArrowRight size={30} />
+                  </span>
+                </ScrollLink>
+              </div>
             </div>
+          </div>
+        </div>
+        <div className="w-full flex flex-col justify-center items-center">
+          <div className="pb-8">
+            <p className="text-2xl font-bold">Tech Stack</p>
+          </div>
+          <div className="w-full flex flex-wrap justify-center py-8">
+            {techs.map(({ id, icon, glow }) => (
+              <div
+                key={id}
+                className="group transform transition duration-300 ease-in-out overflow-hidden text-white tech-card pt-4"
+                style={{ '--glow-color': glow }}
+              >
+                <div className="absolute top-0 left-0 w-full h-full bg-gray-800 shadow-2xl transition-opacity duration-300"></div>
+                <div className="relative z-10 flex flex-col justify-center items-center p-4">{icon}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
