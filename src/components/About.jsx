@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import HeroImage from '../assets/heroImage.png';
-import { Link as ScrollLink } from 'react-scroll';
+import ResumeImage from '../assets/certificate/Odlanyer_Nobela.jpg';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaAndroid, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiFlask, SiFigma, SiNextdotjs } from 'react-icons/si';
 
 const About = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [modalHeight, setModalHeight] = useState(0);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowHeight = window.innerHeight;
+      const modalContentHeight = windowHeight * 0.8;
+      const imageAspectRatio = 16 / 10;
+      const maxWidth = modalContentHeight * imageAspectRatio;
+      setModalHeight(modalContentHeight);
+      
+      // Check if image exceeds viewport height when zoomed in
+      setIsOverflowing(modalContentHeight < ResumeImage.height);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsZoomed(false); // Reset zoom state when modal is closed
+  };
   const techs = [
     { id: 1, icon: <FaHtml5 size={55} />, glow: 'rgba(255, 0, 0, 0.7)' },
     { id: 2, icon: <FaCss3Alt size={55} />, glow: 'rgba(0, 0, 255, 0.7)' },
@@ -89,6 +120,19 @@ const About = () => {
             transform: scale(1.1);
             box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color), 0 0 40px var(--glow-color);
           }
+          .modal-container {
+            max-height: ${modalHeight}px;
+            width: 90%;
+          }
+
+         .modal-image {
+            max-width: 100%;
+            max-height: ${isZoomed ? '100%' : modalHeight + 'px'};
+            cursor: ${isZoomed ? 'zoom-out' : 'zoom-in'};
+            transition: max-height 0.3s ease;
+            margin: auto;
+            display: block;
+          }
         `}
       </style>
       <div className='max-w-screen-xl p-4 mx-auto flex flex-col items-center justify-center'>
@@ -103,7 +147,7 @@ const About = () => {
                 <p className="text-gray-800 font-semibold text-xs font-serif">_</p>
                 <p className="font-bold text-xl tracking-wider text-gray-800">_</p>
               </div>
-              <div className="w-[180px] aspect-square bg-gray-100 z-40 rounded-md">
+              <div className="w-[180px] aspect-square bg-gray-100 z-10 rounded-md">
                 <img src={HeroImage} alt="Profile Image" className="w-full h-full object-cover rounded-md" />
               </div>
               <div className="btm-_container z-40 flex flex-row justify-between items-end gap-10">
@@ -142,39 +186,56 @@ const About = () => {
                 to elevate user experiences with every project.
               </p>
               <div className="mt-4">
-                <ScrollLink
-                  to="project"
-                  smooth
-                  duration={500}
-                  className="button"
-                >
-                  Projects
+                <div className="button" onClick={() => setIsModalOpen(true)}>
+                  View Resume
                   <span className="icon ml-1">
                     <MdOutlineKeyboardArrowRight size={30} />
                   </span>
-                </ScrollLink>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-full flex flex-col justify-center items-center">
-          <div className="pb-8">
-            <p className="text-2xl font-bold">Tech Stack</p>
-          </div>
-          <div className="w-full flex flex-wrap justify-center py-8">
-            {techs.map(({ id, icon, glow }) => (
-              <div
-                key={id}
-                className="group transform transition duration-300 ease-in-out overflow-hidden text-white tech-card pt-4"
-                style={{ '--glow-color': glow }}
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-gray-800 shadow-2xl transition-opacity duration-300"></div>
-                <div className="relative z-10 flex flex-col justify-center items-center p-4">{icon}</div>
-              </div>
-            ))}
+                  </div>
           </div>
         </div>
       </div>
+    </div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className="pb-8">
+        <p className="text-2xl font-bold">Tech Stack</p>
+      </div>
+      <div className="w-full flex flex-wrap justify-center py-8">
+        {techs.map(({ id, icon, glow }) => (
+          <div
+            key={id}
+            className="group transform transition duration-300 ease-in-out overflow-hidden text-white tech-card pt-4"
+            style={{ '--glow-color': glow }}
+          >
+            <div className="absolute top-0 left-0 w-full h-full bg-gray-800 shadow-2xl transition-opacity duration-300"></div>
+            <div className="relative z-10 flex flex-col justify-center items-center p-4">{icon}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+  {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[10000]"
+          onClick={closeModal}
+        >
+          <div
+            className="relative bg-white p-4 rounded shadow-lg text-black max-w-lg w-full modal-container"
+            style={{ zIndex: 51 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="absolute top-2 right-2 bg-red-500 text-white rounded-full px-3 py-1" onClick={closeModal}>X</button>
+            <img
+              src={ResumeImage}
+              alt="Resume"
+              className="modal-image"
+              style={{ maxHeight: isZoomed ? '100%' : modalHeight + 'px', cursor: isZoomed ? 'zoom-out' : 'zoom-in' }}
+              onClick={toggleZoom}
+            />
+            {isOverflowing && <div className="absolute inset-x-0 bottom-2 text-center text-white">Scroll to view full image</div>}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
