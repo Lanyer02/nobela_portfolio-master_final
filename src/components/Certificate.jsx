@@ -27,7 +27,7 @@ const Certificate = () => {
   };
 
   return (
-    <div id='certificate' className="bg-black w-full md:h-screen text-white py-20">
+    <div id='certificate' className="bg-black w-full h-full text-white py-20">
       <div className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-cyan-400">Certificates</p>

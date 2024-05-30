@@ -3,7 +3,8 @@ import bgImage from '../assets/bgb.jpg';
 
 const Home = () => {
   return (
-    <div name="home" className="h-screen w-full relative flex items-center justify-center">
+    <div name="home" className="h-screen w-full relative flex items-center justify-center" style={{ position: 'relative' }}>
+      <div className="absolute inset-0" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center', zIndex: -1 }}></div>
       <style>
       {`
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
@@ -12,9 +13,7 @@ const Home = () => {
             position: relative;
             width: 100%;
             height: 100%;
-            background: url(${bgImage}) no-repeat center center/cover;
             overflow: hidden;
-            z-index: 0; /* Lower z-index for background */
           }
 
           .overlay {
@@ -24,7 +23,7 @@ const Home = () => {
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-            z-index: 0; /* Lower z-index for overlay */
+            z-index: 0; 
           }
 
           .big-text,
@@ -32,7 +31,7 @@ const Home = () => {
             position: absolute;
             width: 100%;
             text-align: center;
-            z-index: 4; /* Updated z-index to be higher than canvas but lower than text */
+            z-index: 1; 
             color: #fff;
             font-family: 'Poppins', sans-serif;
             letter-spacing: 0.1em;
@@ -40,32 +39,32 @@ const Home = () => {
           }
 
           .big-text {
-            font-size: 8vw; /* Responsive font size */
+            font-size: 8vw; 
             font-weight: bold;
-            top: 30vh; /* Responsive positioning */
-            white-space: nowrap; /* Prevent text from wrapping */
+            top: 30vh; 
+            white-space: nowrap; 
           }
 
           .subtext {
-            font-size: 2vw; /* Responsive font size */
-            top: 55vh; /* Responsive positioning */
+            font-size: 2vw; 
+            top: 55vh; 
           }
 
           @media (max-width: 768px) {
             .big-text {
-              font-size: 12vw; /* Adjusted font size for smaller screens */
+              font-size: 12vw;
             }
             .subtext {
-              font-size: 4vw; /* Adjusted font size for smaller screens */
+              font-size: 4vw;
             }
           }
 
           @media (max-width: 480px) {
             .big-text {
-              font-size: 16vw; /* Adjusted font size for very small screens */
+              font-size: 16vw; 
             }
             .subtext {
-              font-size: 5vw; /* Adjusted font size for very small screens */
+              font-size: 5vw;
             }
           }
         `}
@@ -73,7 +72,7 @@ const Home = () => {
       <div id="large-header" className="large-header">
         <div className="overlay"></div>
         <div className="text-center px-4">
-        <p className="big-text">LANYER.dev</p>
+          <p className="big-text">LANYER.dev</p>
           <p className="subtext">WEB DEVELOPER, FRONT END & PROGRAMMER.</p>
         </div>
       </div>
