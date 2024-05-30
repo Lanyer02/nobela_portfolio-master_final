@@ -5,14 +5,9 @@ import javascript from '../assets/javascript.png';
 import tailwind from '../assets/tailwind.png';
 import reactjs from '../assets/react.png';
 import android from '../assets/android.png';
-import cplus from '../assets/c++.png';
-import csharp from '../assets/csharp.png';
-import blazor from '../assets/Blazor.png';
-import node from '../assets/node.png';
-import fireBase from '../assets/firebase.png';
+import flask from '../assets/flask.png';
 import figma from '../assets/Figma.png';
-import ps from '../assets/ps.png';
-import github from '../assets/github.png';
+import nextjs from '../assets/nextjs.png';
 import git from '../assets/git.png';
 
 const Experience = () => {
@@ -23,15 +18,10 @@ const Experience = () => {
     { id: 4, src: tailwind, title: 'TailwindCSS', glow: 'rgba(0, 128, 255, 0.7)' },
     { id: 5, src: reactjs, title: 'ReactJS', glow: 'rgba(0, 0, 139, 0.7)' },
     { id: 6, src: android, title: 'Android Studio', glow: 'rgba(0, 255, 0, 0.7)' },
-    { id: 7, src: cplus, title: 'C++', glow: 'rgba(173, 216, 230, 0.7)' },
-    { id: 8, src: csharp, title: 'C#', glow: 'rgba(238, 130, 238, 0.7)' },
-    { id: 9, src: blazor, title: 'Blazor', glow: 'rgba(148, 0, 211, 0.7)' },
-    { id: 10, src: node, title: 'NodeJS', glow: 'rgba(0, 128, 0, 0.7)' },
-    { id: 11, src: fireBase, title: 'Firebase', glow: 'rgba(255, 69, 0, 0.7)' },
-    { id: 12, src: figma, title: 'Figma', glow: 'rgba(255, 99, 71, 0.7)' },
-    { id: 13, src: ps, title: 'PhotoShop', glow: 'rgba(25, 25, 112, 0.7)' },
-    { id: 14, src: github, title: 'GitHub', glow: 'rgba(255, 255, 255, 0.7)' },
-    { id: 15, src: git, title: 'Git', glow: 'rgba(255, 165, 0, 0.7)' },
+    { id: 7, src: flask, title: 'Python Flask', glow: 'rgba(217, 217, 217, 0.7)' },
+    { id: 8, src: figma, title: 'Figma', glow: 'rgba(255, 99, 71, 0.7)' },
+    { id: 9, src: nextjs, title: 'Next.Js', glow: 'rgba(255, 255, 255, 0.7)' },
+    { id: 10, src: git, title: 'Git', glow: 'rgba(255, 165, 0, 0.7)' },
   ];
 
   return (
@@ -83,7 +73,7 @@ const Experience = () => {
             Tech Stack
           </p>
         </div>
-        <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center py-8'>
+        <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-8 xl:grid-cols-5 gap-8 text-center py-8'>
           {techs.map(({ id, src, title, glow }) => (
             <div
               key={id}

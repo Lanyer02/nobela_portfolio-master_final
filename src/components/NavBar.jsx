@@ -50,6 +50,10 @@ const NavBar = () => {
                     .navbar {
                         transition: background-color 0.5s, backdrop-filter 0.5s;
                     }
+
+                    .hidden-scroll {
+                        overflow: hidden;
+                    }
                 `}
             </style>
 
@@ -74,7 +78,7 @@ const NavBar = () => {
                     {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
                 </div>
 
-                <ul className={`glowing-text flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-gray-900 to-cyan-900 text-white transition-transform duration-300 ease-in-out transform ${nav ? 'translate-y-0' : '-translate-y-full'}`} style={{ zIndex: 9999 }}>
+                <ul className={`flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-gray-900 to-cyan-900 text-white transition-transform duration-300 ease-in-out transform ${nav ? 'translate-y-0' : '-translate-y-full'}`} style={{ zIndex: 9999 }}>
                     {links.map(({ id, link }) => (
                         <li
                             key={id}
@@ -88,7 +92,7 @@ const NavBar = () => {
                         </li>
                     ))}
                 </ul>
-            </div>  
+            </div>
         </>
     );
 };
