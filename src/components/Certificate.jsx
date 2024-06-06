@@ -5,6 +5,9 @@ import cert7 from '../assets/certificate/cert7.png';
 import cert8 from '../assets/certificate/cert8.png';
 import cert9 from '../assets/certificate/cert9.png';
 import cert10 from '../assets/certificate/cert10.png';
+import cert11 from '../assets/certificate/dticoc.png';
+import cert12 from '../assets/certificate/psych.png';
+import cert13 from '../assets/certificate/fit.jpg';
 
 const Certificate = () => {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -30,6 +33,9 @@ const Certificate = () => {
     { id: 8, src: cert8, title: 'Agile Development', description: 'Smart Sweep The Agile Mindset' },
     { id: 9, src: cert9, title: 'Udemy Front-end Course', description: 'Udemy Front-end Course HTML, CSS, & JAVASCRIPT' },
     { id: 10, src: cert10, title: 'Udemy Full-Stack', description: 'Udemy CSS, Bootstrap, Javascript, PHP Full Stack Crash Course' },
+    { id: 11, src: cert11, title: 'DTI COC', description: 'Certificate of Completion "486hrs on-the-job training"' },
+    { id: 12, src: cert12, title: 'Psychology test', description: 'Psychology test result "Above Average"' },
+    { id: 13, src: cert13, title: 'Medical Certificate', description: 'Medical Certificate Result "Physically Fit"' },
   ];
 
   const handleCertClick = (cert) => {

@@ -3,6 +3,8 @@ import dti from '../assets/journal/dti.jpg';
 import dti6 from '../assets/journal/dti6.jpg';
 import dti4 from '../assets/journal/dti4.jpg';
 import dti5 from '../assets/journal/dti5.jpg';
+import dti7 from '../assets/journal/dti7.jpg';
+import dti8 from '../assets/journal/dti8.jpg';
 import dtigif1 from '../assets/journal/dtigif.gif';
 import dtigif2 from '../assets/journal/dtigif2.gif';
 import dtigif3 from '../assets/journal/dtigif3.gif';
@@ -34,14 +36,16 @@ const Journal = () => {
             <img src={dti} alt="dti" className="w-full h-full object-cover rounded-md" />
           </div>
         </div>
-        <div className="w-80 h-auto bg-white text-black z-50 relative lg:absolute lg:top-1/2 lg:transform lg:-translate-y-1/2 lg:mt-48 lg:ml-48 flex justify-center items-center shadow-lg p-4">
-          <p className="text-center">
-            Our team, DTI, has been helpful and supportive both inside and outside of the organization. I am grateful to be part of a team like this. Despite our different strengths, we were able to overcome challenges and successfully complete our tasks.
-          </p>
-        </div>
         <div className="bg-gray-800 p-4 z-20 relative">
           <div className="w-80 h-80 flex justify-center items-center z-30">
             <img src={dti5} alt="dti" className="w-full h-full object-cover rounded-md" />
+          </div>
+        </div>
+        <div className="bg-white p-4 z-20 relative">
+          <div className="w-80 h-80 bg-white text-black z-50 relative">
+            <p className="text-center">
+              I grateful for being part of the DTI team. Each of us has shown incredible support, both within our organization and beyond. Our diverse strengths and expertise have been our greatest assets, enabling us to tackle challenges with creativity and resilience. Despite obstacles, we’ve united to transform difficulties into achievements, and meeting our goals. It’s amazing how our individual talents help each other, fostering a collaborative and respectful environment. I am profoundly thankful to work with such a dedicated and dynamic group.
+            </p>
           </div>
         </div>
       </div>
@@ -49,15 +53,17 @@ const Journal = () => {
       {/* Second Set of Content (Right) */}
       <div className="h-16"></div>
       <div className="flex flex-col lg:flex-row items-start justify-end relative gap-2 flex-wrap journal-flex-col">
+      <div className="bg-white p-4 z-20 relative">
+          <div className="w-80 h-80 bg-white text-black z-50 relative">
+            <p className="text-center">
+              Throughout my internship at DTI, I learned a lot about the importance of communication and teamwork in a professional environment. I was able to apply my skills by working on real projects, which helps in my learning experience. During my time here, I developed a web system application, utilizing the technologies like Python Flask, PHP, HTML, CSS, Bootstrap, and JS. This hands-on experience honed my coding abilities and deepened my understanding of how collaborative efforts and communication drive successful project.
+            </p>
+          </div>
+        </div>
         <div className="bg-gray-800 p-4 z-20 relative">
           <div className="w-80 h-80 flex justify-center items-center z-30">
             <img src={dti4} alt="dti" className="w-full h-full object-cover rounded-md" />
           </div>
-        </div>
-        <div className="w-80 h-auto bg-white text-black z-50 relative lg:absolute lg:top-0 lg:transform lg:-translate-y-full lg:mt-20 lg:mr-48 flex justify-center items-center shadow-lg p-4">
-          <p className="text-center">
-            Throughout my internship at DTI, I learned a lot about the importance of communication and teamwork in a professional environment. I also applied my skills by working on real projects. I used Python Flask, PHP, HTML, CSS, Bootstrap, and JavaScript to create a web system application.
-          </p>
         </div>
         <div className="bg-gray-800 p-4 z-20 relative">
           <div className="w-80 h-80 flex justify-center items-center z-30">
@@ -65,6 +71,27 @@ const Journal = () => {
           </div>
         </div>
       </div>
+
+      <div className="h-16"></div>
+        <div className="flex flex-col lg:flex-row items-center relative gap-2 flex-wrap journal-flex-col">
+          <div className="bg-gray-800 p-4 z-20 relative">
+            <div className="w-80 h-80 flex justify-center items-center z-30">
+              <img src={dti7} alt="dti7" className="w-full h-full object-cover rounded-md" />
+            </div>
+          </div>
+          <div className="bg-gray-800 p-4 z-20 relative">
+            <div className="w-80 h-80 flex justify-center items-center z-30">
+              <img src={dti8} alt="dti8" className="w-full h-full object-cover rounded-md" />
+            </div>
+          </div>
+          <div className="bg-white p-4 z-20 relative">
+          <div className="w-80 h-80 bg-white text-black z-50 relative">
+            <p className="text-center">
+              My internship at DTI has been a rewarding journey, and I am thrilled with the progress I've made and the knowledge I've gained. The experience of working with techs like Python Flask, PHP, HTML, CSS, Bootstrap, and JS has been valuable. Collaborating with a team has taught me the importance of communication and teamwork in achieving common goals. This internship has not only strengthened my confidence but also given me a strong foundation for my future career. I am excited to continue building on these skills and experiences in the professional world.
+            </p>
+          </div>
+        </div>
+        </div>
 
       {/* GIFs */}
       <div className="h-16"></div>
