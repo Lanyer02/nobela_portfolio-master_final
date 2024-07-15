@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import HeroImage from '../assets/heroImage.png';
-import ResumeImage from '../assets/certificate/Odlanyer_Nobela.jpg';
+import ResumeImage from '../assets/certificate/Odlanyer Nobela.png';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaAndroid, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiFlask, SiFigma, SiNextdotjs } from 'react-icons/si';
@@ -19,7 +19,8 @@ const About = () => {
       const imageAspectRatio = 16 / 10;
       const maxWidth = modalContentHeight * imageAspectRatio;
       setModalHeight(modalContentHeight);
-
+      
+      // Check if image exceeds viewport height when zoomed in
       setIsOverflowing(modalContentHeight < ResumeImage.height);
     };
 
@@ -35,7 +36,7 @@ const About = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setIsZoomed(false);
+    setIsZoomed(false); // Reset zoom state when modal is closed
   };
   const techs = [
     { id: 1, icon: <FaHtml5 size={55} />, glow: 'rgba(255, 0, 0, 0.7)' },
@@ -180,9 +181,10 @@ const About = () => {
                 />
               </h2>
               <p className='text-xl mb-6 mt-3 text-white'>
-                a passionate Developer/Designer dedicated to crafting 
-                engaging websites that blend functionality with creativity, aiming 
-                to elevate user experiences with every project.
+              Creative Web Developer/Designer with a flair for transforming ideas into visually captivating 
+              and functional digital experiences. My passion lies in merging innovative design with seamless usability, 
+              ensuring each project meets user expectations. Every code and design choice is made 
+              with the intention of crafting user-centered websites.
               </p>
               <div className="mt-4">
                 <div className="button" onClick={() => setIsModalOpen(true)}>
@@ -212,7 +214,6 @@ const About = () => {
         ))}
       </div>
     </div>
-    <div className="h-16"></div>
   </div>
   {isModalOpen && (
         <div

@@ -22,7 +22,6 @@ const NavBar = () => {
         { id: 2, link: 'about' },
         { id: 3, link: 'project' },
         { id: 4, link: 'certificate' },
-        { id: 5, link: 'journal' },
         { id: 6, link: 'contact' },
     ];
 
