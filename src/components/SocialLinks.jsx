@@ -11,7 +11,7 @@ const SocialLinks = () => {
           Github<FaGithub size={30} />
         </>
       ),
-      href: 'https://github.com/Lanyer05',
+      href: 'https://github.com/Lanyer02',
       style: 'rounded-tr-md',
     },
     {
@@ -30,7 +30,7 @@ const SocialLinks = () => {
           Gmail<HiOutlineMail size={30} />
         </>
       ),
-      href: 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=odlanyer.nobela@hcdc.edu.ph',
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nobelaodlanyer@gmail.com',
       style: 'rounded-br-md',
     },
   ];

@@ -162,7 +162,7 @@ const About = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 text-black" fill="currentColor">
                         
                       </svg>   
-                      <p className="font-semibold text-xs text-black">odlanyernobela152@gmail.com</p>
+                      <p className="font-semibold text-xs text-black">nobelaodlanyer@gmail.com</p>
                     </div>
                   </div>
                 </div>
