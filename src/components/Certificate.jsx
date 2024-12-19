@@ -7,7 +7,7 @@ import cert9 from '../assets/certificate/cert9.png';
 import cert10 from '../assets/certificate/cert10.png';
 
 const Certificate = () => {
-  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [selectedCert, setSelectedCert] = useState(null);
   const [modalHeight, setModalHeight] = useState(0);
 
   useEffect(() => {
@@ -22,21 +22,21 @@ const Certificate = () => {
     return () => window.removeEventListener('resize', adjustModalHeight);
   }, []);
 
-  const certificates = [
+  const certs = [
     { id: 2, src: cert2, title: 'Machine Learning', description: 'Machine Learning Overview and its Application' },
-    { id: 4, src: cert4, title: 'Arduino', description: 'Interfacing with Arduino 2023 -'},
+    { id: 4, src: cert4, title: 'Arduino', description: 'Interfacing with Arduino 2023 -' },
     { id: 7, src: cert7, title: 'Cloud', description: 'Smart Sweep Network on Cloud' },
     { id: 8, src: cert8, title: 'Agile Development', description: 'Smart Sweep The Agile Mindset' },
     { id: 9, src: cert9, title: 'Udemy Front-end Course', description: 'Udemy Front-end Course HTML, CSS, & JAVASCRIPT' },
     { id: 10, src: cert10, title: 'Udemy Full-Stack', description: 'Udemy CSS, Bootstrap, Javascript, PHP Full Stack Crash Course' },
   ];
 
-  const openCertificateModal = (certificate) => {
-    setSelectedCertificate(certificate);
+  const openCertModal = (cert) => {
+    setSelectedCert(cert);
   };
 
-  const closeCertificateModal = () => {
-    setSelectedCertificate(null);
+  const closeCertModal = () => {
+    setSelectedCert(null);
   };
 
   return (
@@ -63,38 +63,38 @@ const Certificate = () => {
         </div>
         <div className="flex justify-center w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {certificates.map((certificate) => (
+            {certs.map((cert) => (
               <div
-                key={certificate.id}
+                key={cert.id}
                 className="relative group cursor-pointer overflow-hidden duration-500 w-64 h-80 bg-gray-800 shadow-2xl text-gray-50 p-5"
-                onClick={() => openCertificateModal(certificate)}
+                onClick={() => openCertModal(cert)}
               >
                 <div className="group-hover:scale-110 w-full h-60 bg-blue-400 duration-500">
-                  <img src={certificate.src} alt={certificate.title} className="w-full h-full object-contain" />
+                  <img src={cert.src} alt={cert.title} className="w-full h-full object-contain" />
                 </div>
                 <div className="absolute w-56 left-0 p-5 -bottom-16 duration-500 group-hover:-translate-y-12">
                   <div className="absolute -z-10 left-0 w-64 h-28 opacity-0 duration-500 group-hover:opacity-80 group-hover:bg-blue-500"></div>
-                  <span className="text-xl font-bold">{certificate.title}</span>
-                  <p className="group-hover:opacity-100 w-56 duration-500 opacity-0">{certificate.description}</p>
+                  <span className="text-xl font-bold">{cert.title}</span>
+                  <p className="group-hover:opacity-100 w-56 duration-500 opacity-0">{cert.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {selectedCertificate && (
+        {selectedCert && (
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[10000]">
             <div className="relative bg-white p-4 rounded shadow-lg text-black max-w-lg w-full modal-container">
               <button
                 className="absolute top-2 right-2 bg-red-500 text-white rounded-full px-3 py-1"
-                onClick={closeCertificateModal}
+                onClick={closeCertModal}
               >
                 X
               </button>
-              <img src={selectedCertificate.src} alt={selectedCertificate.title} className="modal-image" />
+              <img src={selectedCert.src} alt={selectedCert.title} className="modal-image" />
               <div className="mt-4 text-center">
-                <h2 className="text-2xl font-bold">{selectedCertificate.title}</h2>
-                <p className="mt-2">{selectedCertificate.description}</p>
+                <h2 className="text-2xl font-bold">{selectedCert.title}</h2>
+                <p className="mt-2">{selectedCert.description}</p>
               </div>
             </div>
           </div>
